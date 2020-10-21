@@ -5,7 +5,7 @@
 5. select language from countrylanguage inner join country on countrycode = code where region = 'southeast asia';
 6. select * from city where name like 'f%' limit 25;
 7. select count(id) from city inner join country on code = countrycode where country.name = 'china';
-8.select name, population from country where lifeexpectancy is not null order by lifeexpectancy desc  limit 1;
+8.select name, population from country where population  is not null and population > 0 order by lifeexpectancy asc  limit 1;
 9. mysql> select count(name) from country;
 10. select surfacearea, name  from country group by surfacearea,name order by surfacearea desc limit 10;
 11. select city.population, city.name from city inner join country on countrycode = code where country.name = 'Japan' group by city.population, city.name order by city.population desc limit 5;
