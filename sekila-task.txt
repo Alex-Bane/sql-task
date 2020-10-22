@@ -1,0 +1,13 @@
+1. select first_name, last_name from actor;
+2. select first_name, last_name from actor where first_name = 'John';
+3. select first_name, last_name from actor where last_name = 'Neeson';
+4. select * from actor where (actor_id % 10) = 0;
+5. select title, description from film where film_id = 100;
+6. select title, rating  from film where rating = 'R';
+7. select title, rating  from film where rating != 'R';
+8. select title, length from film group by title, length  order by length asc limit 10;
+9. select title, length from film where length = (select max(length) from film);
+10. select title, special_features from film where special_features like '%Deleted Scenes%';
+11.
+12.
+13.select first_name, last_name, count(film_actor.actor_id) as Times_In_Film from actor inner join film_actor on actor.actor_id = film_actor.actor_id group by first_name, last_name order by times_in_film desc limit 1;
